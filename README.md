@@ -1,3 +1,2 @@
 testdjango
-testdjango
 ==========

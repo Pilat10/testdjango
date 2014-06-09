@@ -38,6 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
+PROJECT_APPS = (
+    'base',
+)
+
+INSTALLED_APPS += PROJECT_APPS
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,3 +86,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
